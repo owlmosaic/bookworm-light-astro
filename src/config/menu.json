@@ -1,19 +1,15 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/"
-    },
-    {
-      "name": "About",
+      "name": "About Story",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "Our Partners",
       "url": "/contact"
     },
     {
-      "name": "Pages",
+      "name": "Events",
       "url": "",
       "hasChildren": true,
       "children": [
@@ -38,6 +34,14 @@
           "url": "/privacy-policy"
         }
       ]
+    },
+    {
+      "name": "Resources",
+      "url": "/contact"
+    },
+    {
+      "name": "FAQ",
+      "url": "/contact"
     }
   ],
   "footer": [

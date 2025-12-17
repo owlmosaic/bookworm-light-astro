@@ -2,6 +2,7 @@
 import Posts from "@/components/Posts.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
 import Pagination from "@/layouts/components/Pagination.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
@@ -14,20 +15,20 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
 
 <Base>
   <section class="section">
-    <div class="container text-center  py-32">
-      <div class="row">
-      <div class="col-12 sm:col-7">
-        <h1>STORY</h1>
+    <div class="container  py-32">
+      <div class="row content-center">
+        <div class="col-12 md:col-7">
+          <Image src="/images/story-logo.png" alt="A bird." width="800" height="570" />
+        </div>
+        
+        <div class="col-12 md:col-5 content-center">
+          <h1>Welcome to STORY</h1>
+          <p class="py-4">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
+          <button class="btn btn-primary mt-2">
+            Learn More
+          </button>
+        </div>
       </div>
-      
-      <div class="col-12 sm:col-5">
-        <h1>Welcome to STORY</h1>
-        <p class="py-4">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
-        <button class="btn btn-primary mt-2">
-          Learn More
-        </button>
-      </div>
-    </div>
     </div>
   </section>
   <section class="section bg-gray-100">
@@ -38,13 +39,40 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
       </div>
       
       <div class="col-12 sm:col-7">
-        <p class="">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
+        <p class="pb-4">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
         <button class="btn btn-primary mt-2">
           Learn More
         </button>
       </div>
     </div>
     </div>
+    </section>
+    <section class="section">
+      <div class="container py-16">
+        <div class="row ">
+          <div class="col-12 md:col-8 md:offset-2 mb-12">
+            <h2 class="text-center">Visit STORY</h2>
+            <p class="py-4">Nulla consequat nisi eget volutpat elementum. Donec tincidunt nec erat id accumsan. Quisque eget blandit cursus lorem, vel fringilla ipsum. In non enim sit amet massa consectetur pharetra a sit amet tellus.</p>
+          </div>
+          <div class="col-12 md:col-6">
+            <a href="#" class="block hover:text-primary overflow-hidden group">
+              <Image src="https://placehold.co/600x400" alt="placeholder" width="600" height="400" class="group-hover:scale-[1.03] transition duration-300 w-full"/></a>
+            <h3 class="my-4">
+              <a href="#" class="hover:text-primary transition-duration-300">In-person Events</a>
+            </h3>
+            <p class="my-4">We've gone many places and will go to more. See if we will be close to you.</p>
+          </div>
+          <div class="col-12 md:col-6">
+            <a href="#" class="block hover:text-primary overflow-hidden group">
+              <Image src="https://placehold.co/600x400" alt="placeholder" width="600" height="600" class="group-hover:scale-[1.03] transition duration-300 w-full" />
+            </a>
+            <h3 class="my-4">
+              <a href="#" class="hover:text-primary transition-duration-300">Virtual Events</a>
+            </h3>
+            <p class="my-4">We've gone many places and will go to more. See if we will be close to you.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section bg-gray-100">
@@ -55,7 +83,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
         </div>
         
         <div class="col-12 sm:col-7">
-          <p class="">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
+          <p class="pb-4">The STORY Consortium is committed to empowering rural & small-town students – and the communities that support them – by preparing them for the college search and application process, with an aim of expanding access to higher education.</p>
           <button class="btn btn-primary mt-2">
             Learn More
           </button>

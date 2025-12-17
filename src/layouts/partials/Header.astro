@@ -1,5 +1,6 @@
 ---
 import Logo from "@/components/Logo.astro";
+import Button from "@/shortcodes/Button";
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5";
 
@@ -18,7 +19,7 @@ export interface NavigationLink {
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class="header pt-6">
+<header class="header pt-6 shadow-md">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -29,7 +30,7 @@ const { main }: { main: NavigationLink[] } = menu;
     <label
       id="show-button"
       for="nav-toggle"
-      class="order-2 flex cursor-pointer items-center text-black md:order-1 md:hidden"
+      class="order-2 flex cursor-pointer items-center text-black lg:order-1 lg:hidden"
     >
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Open</title>
@@ -39,7 +40,7 @@ const { main }: { main: NavigationLink[] } = menu;
     <label
       id="hide-button"
       for="nav-toggle"
-      class="order-2 hidden cursor-pointer items-center text-black md:order-1"
+      class="order-2 hidden cursor-pointer items-center text-black lg:order-1"
     >
       <svg class="h-6 fill-current" viewBox="0 0 20 20">
         <title>Menu Close</title>
@@ -52,7 +53,7 @@ const { main }: { main: NavigationLink[] } = menu;
 
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto"
+      class="navbar-nav order-3 hidden w-full lg:order-1 lg:flex lg:w-auto"
     >
       {
         main.map((menu) => (
@@ -85,16 +86,11 @@ const { main }: { main: NavigationLink[] } = menu;
           </>
         ))
       }
+      <li class="nav-item">
+        
+        <Button label="Reach Out" link="#" style="solid" class="m-0" />
+      </li>
     </ul>
-    <div class="order-1 ml-auto flex md:order-2 md:ml-0">
-      <a
-        class="mr-4 inline-block cursor-pointer p-2 text-xl text-dark transition hover:text-primary md:mr-0"
-        href="/search"
-        title="seach"
-        aria-label="seach"
-      >
-        <IoSearch />
-      </a>
-    </div>
+    
   </nav>
 </header>

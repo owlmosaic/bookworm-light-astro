@@ -4,11 +4,11 @@ input#nav-toggle:checked ~ label#show-button {
 }
 
 input#nav-toggle:checked ~ label#hide-button {
-  @apply flex md:hidden;
+  @apply flex lg:hidden;
 }
 
 input#nav-toggle:checked ~ #nav-menu {
-  @apply block md:flex;
+  @apply block lg:flex;
 }
 
 /* form style */
