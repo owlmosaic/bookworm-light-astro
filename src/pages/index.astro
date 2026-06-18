@@ -31,43 +31,39 @@ import campusBg from "@/assets/images/bgs/campus-life.jpg";
           </p>
           <a
             href="/about"
-            class="btn btn-primary mt-2 no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide"
+            class="btn btn-primary mt-2 w-full no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text text-center tracking-wide"
           >
             About STORY
+          </a>
+          <a
+            href="/partners"
+            class="btn btn-primary mt-2 w-full no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text text-center tracking-wide"
+          >
+            STORY institutions
           </a>
         </div>
       </div>
     </div>
   </section>
-  <section class="section relative overflow-hidden">
-    <div aria-hidden="true" class="absolute inset-0 select-none">
-      <Image
-        src={campusBg}
-        alt=""
-        class="absolute inset-0 -z-20 h-full w-full object-cover"
-        loading="lazy"
-      />
-      <div class="absolute inset-0 -z-10 bg-story-bg/92"></div>
+  <section class="section relative overflow-hidden bg-story-bg">
     </div>
     <div class="container py-16 z-10 relative">
       <div class="row">
-        <div class="col-12 sm:col-5">
-          <h2 class="text-light">Meet Our Partners</h2>
-        </div>
+        <div class="col-12 text-center">
+          <h2 class="text-light mb-8">Your STORY Starts Here</h2>
+          
+          <!-- EMBED WRAPPER: Limits width on desktop, applies crisp aspect ratio, and adds subtle styling -->
+          <div class="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-xl border-2 border-white/10 transform-gpu will-change-transform">
+            <iframe
+              class="w-full aspect-video"
+              src="https://www.youtube.com/embed/pOfZWnHiOrI"
+              title="STORY Institutions Video Presentation"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-        <div class="col-12 sm:col-7">
-          <p class="pb-4 text-light text-lg font-medium">
-            The STORY Consortium is committed to empowering rural & small-town
-            students – and the communities that support them – by preparing them
-            for the college search and application process, with an aim of
-            expanding access to higher education.
-          </p>
-          <a
-            href="/partners"
-            class="btn btn-primary mt-2 no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide"
-          >
-            STORY Partners
-          </a>
         </div>
       </div>
     </div>
@@ -116,8 +112,7 @@ import campusBg from "@/assets/images/bgs/campus-life.jpg";
             <a href="/virtual-events" class="">Virtual Events</a>
           </h3>
           <p class="my-4">
-            Explore specific topics and partner institutions through our virtual
-            programming.
+             Explore specific topics and institutions through our virtual programming.
           </p>
         </div>
       </div>
