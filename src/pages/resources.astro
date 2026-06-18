@@ -30,18 +30,26 @@ import DownloadCard from "@/components/DownloadCard.astro";
           </p>
         </div>
       </div>
-      <div class="row my-12">
-        <div class="col-12 lg:col-3 xl:col-4 lg:border-r-8 border-primary pt-4">
-          <h2 class="border-b-8 lg:text-center lg:border-b-0 border-primary py-4 m-0">Financial Aid</h2>
+      <div class="row g-4 my-12 justify-center">
+        
+        <!-- Financial Aid 101 Card -->
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 flex">
+          <DownloadCard 
+            href="/docs/STORY%20Financial%20Aid%20101.pdf" 
+            title="Financial Aid 101" 
+            fileSize="200 KB" 
+          />
+        </div>
+        
+        <!-- School Profile Example Card -->
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 flex">
+          <DownloadCard 
+            href="/docs/STORY School Profile Example.pdf" 
+            title="School Profile Example" 
+            fileSize="200 KB" 
+          />
         </div>
 
-        <div class="col-12 lg:col-9 xl:col-8 prose prose-slate prose-xl max-w-none">
-          <DownloadCard 
-              href="/docs/STORY%20Financial%20Aid%20101.pdf" 
-              title="STORY Financial Aid 101" 
-              fileSize="200 KB" 
-            />
-        </div>
       </div>
 
     </div>
