@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Story Consortium",
-    "base_url": "https://bookworm-light-astro.vercel.app",
+    "title": "STORY Consortium",
+    "base_url": "https://storyconsortium.org",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -16,9 +16,9 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Bookworm Light Astro Blog Template"
+    "meta_author": "STORY",
+    "meta_image": "/images/story-word.png",
+    "meta_description": "STORY Consortium website"
   },
 
   "google_tag_manager": {
@@ -32,8 +32,8 @@
   },
 
   "contactinfo": {
-    "address": "355 S Grand Ave <br/> Los Angeles, CA 90071",
-    "email": "info@bookworm.org",
-    "phone": "+800 567 1234"
+    "address": "",
+    "email": "",
+    "phone": ""
   }
 }

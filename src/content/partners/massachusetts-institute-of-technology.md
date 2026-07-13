@@ -8,7 +8,7 @@ featured: true
 website: 'https://mitadmissions.org/'
 logo: ../../assets/images/logos/mit.png
 video: ''
-instagram: MITAdmissions
+instagram: ''
 facebook: ''
 twitter: ''
 tiktok: ''
