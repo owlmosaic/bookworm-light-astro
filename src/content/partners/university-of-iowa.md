@@ -8,7 +8,7 @@ featured: true
 website: 'https://admissions.uiowa.edu/'
 logo: ../../assets/images/logos/uiowa.png
 video: 'https://www.youtube.com/@IowaAdmissions'
-instagram: iowadmissions
+instagram: iowaadmissions
 facebook: ''
 twitter: ''
 tiktok: ''

@@ -9,7 +9,7 @@ website: 'https://admission.brown.edu/'
 logo: ../../assets/images/logos/brown.png
 video: 'https://www.youtube.com/brownuniversity'
 instagram: brownuadmission
-facebook: brownuadmission
+facebook: brownadmission
 twitter: BrownUniversity
 tiktok: ''
 campusImage: '@/assets/images/campus/brown.jpg'
