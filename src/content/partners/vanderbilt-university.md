@@ -2,7 +2,7 @@
 title: Vanderbilt University
 location: "Nashville, Tennessee"
 region: "South"
-students: "7,221"
+students: "7,366"
 type: "Urban private research university"
 featured: true
 website: 'https://www.vanderbilt.edu/admissions/'
@@ -15,4 +15,4 @@ tiktok: vanderbiltu
 campusImage: '@/assets/images/campus/vanderbilt.jpg'
 ---
 
-Vanderbilt is a private research university in Nashville, Tennessee, that is a global hub for learning, innovation and leadership. Its 11 undergraduate and graduate schools and colleges offer students more than 65 undergraduate majors, a full range of graduate and professional degrees, and faculty who are leaders in their fields. The 340-acre campus—an accredited arboretum just 1.5 miles from downtown—is home to groundbreaking interdisciplinary research, SEC athletics, and a community dedicated to free expression and civil discourse that lives by its motto, Crescere aude, dare to grow.
+Vanderbilt is a private research university in Nashville, Tennessee, and is a global hub for learning, innovation and leadership. Its 11 undergraduate and graduate schools and colleges offer students more than 65 undergraduate majors, a full range of graduate and professional degrees, and faculty who are leaders in their fields. The 340-acre campus—an accredited arboretum just 1.5 miles from downtown—is home to groundbreaking interdisciplinary research, SEC athletics, and a community dedicated to free expression and civil discourse that lives by its motto, Crescere aude, dare to grow.
