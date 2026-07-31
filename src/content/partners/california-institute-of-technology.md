@@ -2,7 +2,7 @@
 title: California Institute of Technology
 location: "Pasadena, California"
 region: "West"
-students: "1,023"
+students: "988"
 type: "Small city private research university"
 featured: true
 website: https://admissions.caltech.edu

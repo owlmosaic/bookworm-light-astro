@@ -11,8 +11,13 @@ video: 'https://www.youtube.com/barnardcollege'
 instagram: barnardadmissions
 facebook: ''
 twitter: ''
-tiktok: ''
+tiktok: 'barnard.college'
 campusImage: '@/assets/images/campus/barnard.jpg'
 ---
 
-Established as Columbia University’s sister college in 1889, Barnard College is a women’s college located in New York City in the Manhattan borough. Students learn to embrace the whole self through our empowering faculty and student services. Our community includes artists, scientists, poets, activists, and athletes bonded by a desire to create positive change. Through our Foundations Curriculum, we encourage students to explore and remain curious throughout their education. All students receive career guidance through Beyond Barnard, academic advisors, and comprehensive health and wellness services. Access Barnard provides students who identify as first-generation, low-income, and/or international with additional resources like peer mentoring, advising, a lending library, emergency funds, and more. All Barnard College students can take advantage of the resources at Columbia University.
+Since 1889, Barnard College has had boldness in its DNA. Located on a 4.5-acre campus in New York City, Barnard College offers the best of both worlds: a close-knit community of more than 3,000 trailblazing women paired with the extensive resources, coeducational setting, and Division I Ivy League athletics of Columbia University.
+
+With an unwavering commitment to affordability, Barnard meets 100% of demonstrated financial need—with an average grant of $76,421 in 2025-2026—and guarantees housing for all four years. Through initiatives like Access Barnard, Beyond Barnard, and the Summer Research Institute, students gain personalized mentorship and hands-on experience, bridging academic
+rigor to NYC’s dynamic landscape.
+
+Prepared for lifelong success, 91% of Barnard graduates are employed or enrolled in graduate school six months post-degree, leading across major sectors including finance, education, law, healthcare, and technology. Barnard doesn’t just prepare women for the future–it empowers them to shape it.
