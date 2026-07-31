@@ -15,6 +15,8 @@ tiktok: ''
 campusImage: '@/assets/images/campus/umg.jpg'
 ---
 
-Identified as the flagship university under the University System of Maryland, the University of Maryland (UMD) is committed to ensuring that all students know that the pursuit of higher education is within their reach. Committed to achieving excellence as the State's primary center for research and graduate education and the institution of choice for undergraduate students of exceptional ability and promise, UMD is charged with educating students and advancing the flow of knowledge.
+The University of Maryland (UMD), the flagship institution of the University System of Maryland, is one of the nation's preeminent public research universities. of the University System of Maryland, is one of the nation's leading public research universities.
 
-Located just 10 miles from the nation’s capitol and an easy drive to the Maryland state capitol, UMD is the only public research institution inside the Washington, D.C. Beltway primed to take you where you want to go. With over 100 majors, 12 colleges and schools, and more than 800 clubs and organizations, our students are researching dynamic topics such as alternative energy, advising federal officials on homeland security, agriculture for the future, working with the state to reduce childhood obesity, and investigating many other pressing issues.
+Located in College Park, just 10 miles from Washington, D.C., UMD is the only public research university inside the Capital Beltway, providing students with unmatched access to internships, research, federal agencies, Fortune 500 companies, nonprofits, and cultural institutions. This prime location, combined with world-class faculty and facilities, creates exceptional opportunities to learn, innovate, and make a difference. 
+
+With more than 100 undergraduate majors, 12 colleges and schools, and over 800 student organizations, Terps have countless opportunities to explore their interests, develop their talents, and build lifelong connections.

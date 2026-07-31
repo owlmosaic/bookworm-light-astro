@@ -2,7 +2,7 @@
 title: University of Pennsylvania
 location: "Philadelphia, Pennsylvania"
 region: "Mid-Atlantic"
-students: "10,497"
+students: "10,325"
 type: "Urban private research university"
 featured: true
 website: 'https://admissions.upenn.edu'
