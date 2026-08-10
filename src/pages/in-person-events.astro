@@ -4,6 +4,60 @@ import { Image } from "astro:assets";
 import CTA from "@/components/CTA.astro";
 
 import mapImg from "@/assets/images/past-events-map.png";
+
+// Structured Event Data
+const upcomingEvents = [
+  {
+    title: "STORY Session in Clovis, NM",
+    date: "Sunday, September 27",
+    time: "2:00 - 4:00 pm",
+    location: "Clovis High School",
+    address: "1900 N Thornton St, Clovis, NM 88101",
+    description: "Join us in Clovis, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    studentLink: "https://apps.admissions.yale.edu/register/storyclovis",
+    counselorLink: "https://apps.admissions.yale.edu/register/storycloviscounselors"
+  },
+  {
+    title: "STORY Session in Española, NM",
+    date: "Monday, September 28",
+    time: "6:00 - 8:00 pm",
+    location: "Center for Fine Arts at Northern New Mexico College",
+    address: null,
+    description: "Join us in Española, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    studentLink: "https://apps.admissions.yale.edu/register/storyespanola",
+    counselorLink: "https://apps.admissions.yale.edu/register/storyespanolacounselors"
+  },
+  {
+    title: "STORY Session in Durango, CO",
+    date: "Tuesday, September 29",
+    time: "5:30 - 7:30 pm",
+    location: "Fort Lewis College",
+    address: "1000 Rim Drive, Durango, CO 81301",
+    description: "Join us in Durango, CO, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    studentLink: "https://apps.admissions.yale.edu/register/storydurango",
+    counselorLink: "https://apps.admissions.yale.edu/register/storydurangocounselors"
+  },
+  {
+    title: "STORY Session in Snowflake, AZ",
+    date: "Wednesday, September 30",
+    time: "5:30 - 7:30 pm",
+    location: "Snowflake High School",
+    address: "190 S 2nd W St, Snowflake, AZ 85937",
+    description: "Join us in Snowflake, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    studentLink: "https://apps.admissions.yale.edu/register/storysnowflake",
+    counselorLink: "https://apps.admissions.yale.edu/register/storysnowflakecounselors"
+  },
+  {
+    title: "STORY Session in Kingman, AZ",
+    date: "Thursday, October 1",
+    time: "5:30 - 7:30 pm",
+    location: "Kingman Academy High School",
+    address: "3420 N Burbank St, Kingman, AZ 86409",
+    description: "Join us in Kingman, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    studentLink: "https://apps.admissions.yale.edu/register/storykingman",
+    counselorLink: "https://apps.admissions.yale.edu/register/storykingmancounselors"
+  }
+];
 ---
 
 <Base title="In-Person Events">
@@ -20,18 +74,90 @@ import mapImg from "@/assets/images/past-events-map.png";
         </div>
       </div>
       <div class="row my-12">
-        <div class="col-12 lg:col-3 lg:border-r-8 xl:col-4 border-primary ">
+        <div class="col-12 lg:col-4 lg:border-r-8 border-primary ">
           <h1 class="border-b-8 lg:text-center lg:border-b-0 border-primary py-4 m-0">In-Person Events</h1>
         </div>
-        <div class="col-12 lg:col-9 xl:col-8 prose prose-slate prose-xl max-w-none">
+        <div class="col-12 lg:col-8 prose prose-slate prose-xl max-w-none">
           <p class="mt-0 pt-4">
             Our in-person programs typically include an admission information session followed by a comprehensive college fair. The information session will cover details about the college process, including how to identify colleges that are a good fit, college affordability, and application advice specifically for rural and small-town students. We hope you will take advantage of the college fair to ask questions and discover colleges and universities you may not have heard of before!
           </p>
         </div>
       </div>
+      
       <div class="row">
-        <div class="col-12 text-center pt-4">
-          <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block ">Past Events</h2>
+        <div class="col-12 text-center py-4">
+          <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block">Upcoming Events</h2>
+        </div>
+      </div>
+
+      <!-- Dynamically Mapped Upcoming Events Grid -->
+      <div class="row justify-self-center g-6 gy-4">
+        {upcomingEvents.map((event) => (
+          <div class="col-12 lg:col-6 flex">
+            <div class="bg-white border-2 border-primary/10 p-6 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between w-full">
+              
+              <div>
+                <!-- Date & Location Banner -->
+                <div class="mb-4 pb-3 border-b border-slate-100">
+                  <span class="block text-text font-bold text-lg leading-tight">
+                    {event.date}
+                  </span>
+                  <span class="block text-slate-500 text-sm font-medium mt-1">
+                    {event.time} &bull; In-Person
+                  </span>
+                </div>
+
+                <!-- Event Title -->
+                <h3 class="h6 text-xl font-primary mb-6 leading-snug text-text">
+                  {event.title}
+                </h3>
+
+                <!-- Location details -->
+                <p class="text-sm font-semibold text-slate-700 mb-4">
+                  {event.location}
+                  {event.address && <span class="block font-normal text-slate-500 text-xs mt-0.5">{event.address}</span>}
+                </p>
+
+                <!-- Description -->
+                <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                  {event.description}
+                </p>
+              </div>
+
+              <!-- Button Stack -->
+              <div class="flex flex-col gap-4 mt-auto pt-2">
+                <!-- Priority Student Link -->
+                <a 
+                  href={event.studentLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-full flex items-center justify-center font-bold px-6 py-6 bg-primary btn btn-primary no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide text-center"
+                >
+                  Student Registration
+                </a>
+
+                <!-- Counselor Link -->
+                {event.counselorLink && (
+                  <a 
+                    href={event.counselorLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="w-full flex items-center justify-center font-semibold px-4 py-6 border-2 border-primary/20 uppercase text-primary rounded-lg hover:border-primary hover:bg-primary/5 transition-colors no-underline text-center"
+                  >
+                    Counselor Registration
+                  </a>
+                )}
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Past Events Section -->
+      <div class="row">
+        <div class="col-12 text-center pt-12">
+          <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block">Past Events</h2>
           <Image
             src={mapImg}
             alt="Map showing locations of past in-person events"
@@ -39,82 +165,81 @@ import mapImg from "@/assets/images/past-events-map.png";
             height={800}
             class="pt-4"
           />
-          </div>
         </div>
-        <div class="row max-w-5xl justify-self-center">
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-secondary">Fall 2023</h3> 
-              <ul>
-                <li>Bentonville, AR</li>
-                <li>Tulsa, OK</li>
-                <li>Wichita, KS</li>
-                <li>Lincoln, NE</li>
-                <li>Cedar Rapids, IA</li>
-              </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-accent-green">Spring 2024</h3> 
-              <ul>
-                <li>Gallup, NM</li>
-                <li>Grand Junction, CO</li>
-                <li>Herriman, UT</li>
-                <li>Pocatello, ID</li>
-                <li>Jackson, WY</li>
-              </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-accent-purple">Fall 2024</h3>
-            <ul>
-              <li>Moscow, ID</li>
-              <li>Walla Walla, WA</li>
-              <li>Bend, OR</li>
-              <li>Redding, CA</li>
-              <li>Reno, NV</li>
-            </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-primary">Spring 2025</h3>
-              <ul>
-                <li>Johnson City, TN</li>
-                <li>Charleston, WV</li>
-                <li>Roanoke, VA</li>
-                <li>Fayetteville, NC</li>
-                <li>Macon, GA</li>
-              </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-accent-red">Fall 2025</h3>
-              <ul>
-                <li>Natchitoches, LA</li>
-                <li> Tyler, TX</li>
-                <li>Bentonville, AR</li>
-                <li>Tulsa, OK</li>
-                <li>Wichita, KS</li>
-              </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-accent-purple">Fall 2025 (Continued)</h3>
-              <ul>
-                <li>Lenox, MA</li>
-                <li>Lebanon, NH</li>
-                <li>Augusta, ME</li>
-              </ul>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4">
-              <h3 class="font-primary m-0 py-2 border-b-8 border-accent-green">Spring 2026</h3>
-              <ul>
-                <li>Duluth, MN</li>
-                <li>La Crosse, WI</li>
-                <li>Granville, IL</li>
-                <li>Kokomo, IN</li>
-                <li>Kalamazoo, MI</li>
-              </ul>
-            </div>
-          
-        
-          </div>
+      </div>
+
+      <div class="row max-w-5xl justify-self-center">
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-secondary">Fall 2023</h3> 
+          <ul>
+            <li>Bentonville, AR</li>
+            <li>Tulsa, OK</li>
+            <li>Wichita, KS</li>
+            <li>Lincoln, NE</li>
+            <li>Cedar Rapids, IA</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-accent-green">Spring 2024</h3> 
+          <ul>
+            <li>Gallup, NM</li>
+            <li>Grand Junction, CO</li>
+            <li>Herriman, UT</li>
+            <li>Pocatello, ID</li>
+            <li>Jackson, WY</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-accent-purple">Fall 2024</h3>
+          <ul>
+            <li>Moscow, ID</li>
+            <li>Walla Walla, WA</li>
+            <li>Bend, OR</li>
+            <li>Redding, CA</li>
+            <li>Reno, NV</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-primary">Spring 2025</h3>
+          <ul>
+            <li>Johnson City, TN</li>
+            <li>Charleston, WV</li>
+            <li>Roanoke, VA</li>
+            <li>Fayetteville, NC</li>
+            <li>Macon, GA</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-accent-red">Fall 2025</h3>
+          <ul>
+            <li>Natchitoches, LA</li>
+            <li>Tyler, TX</li>
+            <li>Bentonville, AR</li>
+            <li>Tulsa, OK</li>
+            <li>Wichita, KS</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-accent-purple">Fall 2025 (Continued)</h3>
+          <ul>
+            <li>Lenox, MA</li>
+            <li>Lebanon, NH</li>
+            <li>Augusta, ME</li>
+          </ul>
+        </div>
+        <div class="col-12 sm:col-6 md:col-4">
+          <h3 class="font-primary m-0 py-2 border-b-8 border-accent-green">Spring 2026</h3>
+          <ul>
+            <li>Duluth, MN</li>
+            <li>La Crosse, WI</li>
+            <li>Granville, IL</li>
+            <li>Kokomo, IN</li>
+            <li>Kalamazoo, MI</li>
+          </ul>
+        </div>
+      </div>
 
     </div>
   </section>
-    <CTA  />
-  </Base>
+  <CTA />
+</Base>
