@@ -68,55 +68,101 @@ import campusBg from "@/assets/images/bgs/campus-life.jpg";
     </div>
   </section>
   <section class="section">
-    <div class="container py-16">
-      <div class="row">
-        <div class="col-12 md:col-8 md:offset-2 mb-8">
-          <h2 class="text-center">Visit STORY</h2>
-        </div>
-        <div class="col-12 md:col-6">
-          <a
-            href="/in-person-events"
-            class="block hover:text-primary overflow-hidden group"
-          >
-            <Image
-              src={inPersonImg}
-              alt="placeholder"
-              width={600}
-              height={400}
-              class="group-hover:scale-[1.03] transition duration-300 w-full not-prose"
-            />
-          </a>
-          <h3 class="text-2xl my-4 font-primary">
-            <a href="/in-person-events" class="">In-person Events</a>
-          </h3>
-          <p class="my-4">
-            Learn more about which region we will travel to next (and where we
-            have been previously).
-          </p>
-        </div>
-        <div class="col-12 md:col-6">
-          <a
-            href="/virtual-events"
-            class="block hover:text-primary overflow-hidden group"
-          >
-            <Image
-              src={virtualImg}
-              alt="placeholder"
-              width={600}
-              height={400}
-              class="group-hover:scale-[1.03] transition duration-300 w-full not-prose"
-            />
-          </a>
-          <h3 class="text-2xl my-4 font-primary">
-            <a href="/virtual-events" class="">Virtual Events</a>
-          </h3>
-          <p class="my-4">
-             Explore specific topics and institutions through our virtual programming.
-          </p>
-        </div>
+  <div class="container py-16">
+    <div class="row">
+      <div class="col-12 text-center mb-12">
+        <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block">Visit STORY</h2>
       </div>
     </div>
-  </section>
+
+    <div class="row g-6 max-w-5xl justify-self-center">
+      
+      <!-- In-Person Events Card -->
+      <div class="col-12 md:col-6 flex">
+        <div class="bg-white border-2 border-primary/10 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between overflow-hidden w-full group">
+          
+          <div>
+            <!-- Cover Image Container -->
+              <Image
+                src={inPersonImg}
+                alt="Students attending an in-person STORY event"
+                width={600}
+                height={400}
+                class="w-full h-52 object-cover group-hover:scale-[1.03] transition-transform duration-300 not-prose"
+              />
+            
+
+            <!-- Content Area -->
+            <div class="p-6">
+
+              <h3 class="h6 text-2xl font-primary mb-3 text-text  transition-colors">
+                  In-Person Events
+              </h3>
+
+              <p class="text-slate-600 text-base leading-relaxed mb-6">
+                Learn more about which region we will travel to next, view detailed location information, and discover where we have traveled previously.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Action Button -->
+          <div class="px-6 pb-6 mt-auto">
+            <a 
+              href="/in-person-events" 
+              class="w-full flex items-center justify-center font-bold px-6 py-3.5 bg-primary btn btn-primary no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide text-center"
+            >
+              Explore In-Person Events
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Virtual Events Card -->
+      <div class="col-12 md:col-6 flex">
+        <div class="bg-white border-2 border-primary/10 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between overflow-hidden w-full group">
+          
+          <div>
+            <!-- Cover Image Container -->
+              <Image
+                src={virtualImg}
+                alt="Student participating in a virtual STORY webinar"
+                width={600}
+                height={400}
+                class="w-full h-52 object-cover group-hover:scale-[1.03] transition-transform duration-300 not-prose"
+              />
+
+            <!-- Content Area -->
+            <div class="p-6">
+
+              <h3 class="h6 text-2xl font-primary mb-3 text-text  transition-colors">
+                
+                  Virtual Events
+                
+              </h3>
+
+              <p class="text-slate-600 text-base leading-relaxed mb-6">
+                Explore specific admissions topics, application guidance, and member institutions through our live virtual programming schedule.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card Action Button -->
+          <div class="px-6 pb-6 mt-auto">
+            <a 
+              href="/virtual-events" 
+              class="w-full flex items-center justify-center font-bold px-6 py-3.5 bg-primary btn btn-primary no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide text-center"
+            >
+              View Virtual Schedule
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <CTA />
 </Base>
