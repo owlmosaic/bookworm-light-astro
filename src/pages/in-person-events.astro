@@ -2,102 +2,137 @@
 import Base from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import CTA from "@/components/CTA.astro";
+import EventCard, {
+  isEventUpcoming,
+  type InPersonEvent,
+} from "@/components/EventCard.astro";
 
 import mapImg from "@/assets/images/past-events-map.png";
 
 // Structured Event Data
-const upcomingEvents = [
+const upcomingEvents: InPersonEvent[] = [
   {
     title: "STORY Session in Champlain, NY",
     date: "Monday, September 21",
+    isoDate: "2026-09-21",
     time: "6:00 - 8:00 pm",
     location: "Northeastern Clinton Central School",
     address: "103 Route 276, Champlain, NY 12919",
-    description: "Join us in Champlain, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
+    description:
+      "Join us in Champlain, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storychamplain",
-    counselorLink: "https://apps.admissions.yale.edu/register/storychamplaincounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storychamplaincounselors",
   },
   {
     title: "STORY Session in Glens Falls, NY",
     date: "Tuesday, September 22",
+    isoDate: "2026-09-22",
     time: "6:00 - 8:00 pm",
     location: "Glens Falls High School",
     address: "10 Quade Street, Glens Falls, NY 12801",
-    description: "Join us in Glens Falls, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
+    description:
+      "Join us in Glens Falls, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storyglensfalls",
-    counselorLink: "https://apps.admissions.yale.edu/register/storyglensfallscounselors"
-  },
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storyglensfallscounselors",
+  }, 
   {
     title: "STORY Session in Oneonta, NY",
     date: "Wednesday, September 23",
+    isoDate: "2026-09-23",
     time: "6:00 - 8:00 pm",
     location: "SUNY Oneonta Craven Lounge",
     address: "108 Ravine Parkway, Oneonta, NY 13820",
-    description: "Join us in Oneonta, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
+    description:
+      "Join us in Oneonta, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storyoneonta",
-    counselorLink: "https://apps.admissions.yale.edu/register/storyoneontacounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storyoneontacounselors",
   },
   {
     title: "STORY Session in Canisteo, NY",
     date: "Thursday, September 24",
+    isoDate: "2026-09-24",
     time: "5:30 - 7:30 pm",
     location: "Canisteo-Greenwood High School",
     address: "84 Greenwood St, Canisteo, NY 14823",
-    description: "Join us in Canisteo, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
+    description:
+      "Join us in Canisteo, NY, for a general admissions information session followed by a college fair featuring 25+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storycanisteo",
-    counselorLink: "https://apps.admissions.yale.edu/register/storycanisteocounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storycanisteocounselors",
   },
   {
     title: "STORY Session in Clovis, NM",
     date: "Sunday, September 27",
+    isoDate: "2026-09-27",
     time: "2:00 - 4:00 pm",
     location: "Clovis High School",
     address: "1900 N Thornton St, Clovis, NM 88101",
-    description: "Join us in Clovis, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    description:
+      "Join us in Clovis, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storyclovis",
-    counselorLink: "https://apps.admissions.yale.edu/register/storycloviscounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storycloviscounselors",
   },
   {
     title: "STORY Session in Española, NM",
     date: "Monday, September 28",
+    isoDate: "2026-09-28",
     time: "6:00 - 8:00 pm",
     location: "Center for Fine Arts at Northern New Mexico College",
     address: "921 N Paseo de Onate, Espanola, NM 87532",
-    description: "Join us in Española, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    description:
+      "Join us in Española, NM, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storyespanola",
-    counselorLink: "https://apps.admissions.yale.edu/register/storyespanolacounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storyespanolacounselors",
   },
   {
     title: "STORY Session in Durango, CO",
     date: "Tuesday, September 29",
+    isoDate: "2026-09-29",
     time: "5:30 - 7:30 pm",
     location: "Fort Lewis College",
     address: "1000 Rim Drive, Durango, CO 81301",
-    description: "Join us in Durango, CO, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    description:
+      "Join us in Durango, CO, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storydurango",
-    counselorLink: "https://apps.admissions.yale.edu/register/storydurangocounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storydurangocounselors",
   },
   {
     title: "STORY Session in Snowflake, AZ",
     date: "Wednesday, September 30",
+    isoDate: "2026-09-30",
     time: "5:30 - 7:30 pm",
     location: "Snowflake High School",
     address: "190 S 2nd W St, Snowflake, AZ 85937",
-    description: "Join us in Snowflake, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    description:
+      "Join us in Snowflake, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storysnowflake",
-    counselorLink: "https://apps.admissions.yale.edu/register/storysnowflakecounselors"
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storysnowflakecounselors",
   },
   {
     title: "STORY Session in Kingman, AZ",
     date: "Thursday, October 1",
+    isoDate: "2026-10-01",
     time: "5:30 - 7:30 pm",
     location: "Kingman Academy High School",
     address: "3420 N Burbank St, Kingman, AZ 86409",
-    description: "Join us in Kingman, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
+    description:
+      "Join us in Kingman, AZ, for a general admissions information session followed by a college fair featuring 30+ institutions from across the country!",
     studentLink: "https://apps.admissions.yale.edu/register/storykingman",
-    counselorLink: "https://apps.admissions.yale.edu/register/storykingmancounselors"
-  }
+    counselorLink:
+      "https://apps.admissions.yale.edu/register/storykingmancounselors",
+  },
 ];
+
+const activeEvents = upcomingEvents.filter((event) =>
+  isEventUpcoming(event.isoDate)
+);
 ---
 
 <Base title="In-Person Events">
@@ -131,67 +166,32 @@ const upcomingEvents = [
       </div>
 
       <!-- Dynamically Mapped Upcoming Events Grid -->
-      <div class="row justify-self-center g-6 gy-4">
-        {upcomingEvents.map((event) => (
-          <div class="col-12 lg:col-6 flex">
-            <div class="bg-white border-2 border-primary/10 p-6 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between w-full">
-              
-              <div>
-                <!-- Date & Location Banner -->
-                <div class="mb-4 pb-3 border-b border-slate-100">
-                  <span class="block text-text font-bold text-lg leading-tight">
-                    {event.date}
-                  </span>
-                  <span class="block text-slate-500 text-sm font-medium mt-1">
-                    {event.time} &bull; In-Person
-                  </span>
-                </div>
-
-                <!-- Event Title -->
-                <h3 class="h6 text-xl font-primary mb-6 leading-snug text-text">
-                  {event.title}
-                </h3>
-
-                <!-- Location details -->
-                <p class="text-sm font-semibold text-slate-700 mb-4">
-                  {event.location}
-                  {event.address && <span class="block font-normal text-slate-500 text-xs mt-0.5">{event.address}</span>}
-                </p>
-
-                <!-- Description -->
-                <p class="text-slate-600 text-lg mb-6 leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-
-              <!-- Button Stack -->
-              <div class="flex flex-col gap-4 mt-auto pt-2">
-                <!-- Priority Student Link -->
-                <a 
-                  href={event.studentLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="w-full flex items-center justify-center font-bold px-6 py-6 bg-primary btn btn-primary no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide text-center"
-                >
-                  Student Registration
-                </a>
-
-                <!-- Counselor Link -->
-                {event.counselorLink && (
-                  <a 
-                    href={event.counselorLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="w-full flex items-center justify-center font-semibold px-4 py-6 border-2 border-primary/20 uppercase text-primary rounded-lg hover:border-primary hover:bg-primary/5 transition-colors no-underline text-center"
-                  >
-                    Counselor Registration
-                  </a>
-                )}
-              </div>
-
+      {activeEvents.length > 0 && (
+        <div id="upcoming-events-grid" class="row justify-self-center g-6 gy-4">
+          {activeEvents.map((event) => (
+            <div
+              class="col-12 lg:col-6 flex"
+              data-event-item
+              data-event-date={event.isoDate}
+            >
+              <EventCard type="in-person" {...event} />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      )}
+
+      <!-- Empty State Fallback -->
+      <div
+        id="no-upcoming-events"
+        aria-live="polite"
+        class:list={[
+          "row justify-self-center prose prose-slate prose-xl text-center py-6 mb-8",
+          { hidden: activeEvents.length > 0 },
+        ]}
+      >
+        <p>
+          Check back in early 2027 for details on our Spring in-person events.
+        </p>
       </div>
 
       <!-- Past Events Section -->
