@@ -2,18 +2,27 @@
 import Base from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import CTA from "@/components/CTA.astro";
+import EventCard, {
+  isEventUpcoming,
+  type VirtualEvent,
+} from "@/components/EventCard.astro";
 
-// Structured Event Data
-const upcomingEvents = [
-  {
-    title: "STORY Session with Cornell University, University of Chicago, University of Maryland, Washington & Lee University, and Wellesley College",
-    date: "Tuesday, October 13",
-    time: "7:00 - 8:15 pm ET",
-    featuredInstitutions: "Cornell University, University of Chicago, University of Maryland, Washington & Lee University, and Wellesley College",
-    description: "Join five STORY representatives and learn more about their institutions, holistic admissions, advice for the application process, and information about financial aid.",
-    registrationLink: "https://access.wlu.edu/register/?id=f717bda0-5a11-44de-97de-9dc5417ccff8"
-  }
+// Structured Event Data (add items here as virtual sessions are scheduled)
+const upcomingEvents: VirtualEvent[] = [
+  // {
+  //   title: "STORY Virtual Information Session",
+  //   date: "Tuesday, October 13",
+  //   isoDate: "2026-10-13",
+  //   time: "7:00 - 8:15 pm ET",
+  //   featuredInstitutions: "Partner Colleges & Universities",
+  //   description: "Join STORY representatives to learn more about holistic admissions, the application process, and financial aid.",
+  //   registrationLink: "https://example.com/register",
+  // },
 ];
+
+const activeEvents = upcomingEvents.filter((event) =>
+  isEventUpcoming(event.isoDate)
+);
 ---
 
 <Base title="Virtual Events">
@@ -29,9 +38,12 @@ const upcomingEvents = [
           />
         </div>
       </div>
+
       <div class="row my-12">
         <div class="col-12 lg:col-4 lg:border-r-8 border-primary pt-4">
-          <h1 class="border-b-8 lg:text-center lg:border-b-0 border-primary py-4 m-0">Virtual Events</h1>
+          <h1 class="border-b-8 lg:text-center lg:border-b-0 border-primary py-4 m-0">
+            Virtual Events
+          </h1>
         </div>
         <div class="col-12 lg:col-8 prose prose-slate prose-xl max-w-none">
           <p class="mt-0 pt-4">
@@ -39,66 +51,46 @@ const upcomingEvents = [
           </p>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col-12 text-center py-4">
-          <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block">Upcoming Events</h2>
+          <h2 class="border-b-8 border-accent-red py-4 m-0 inline-block">
+            Upcoming Events
+          </h2>
         </div>
       </div>
 
       <!-- Dynamically Mapped Upcoming Events Grid -->
-      <div class="row justify-self-center g-6 gy-4 mb-12">
-        {upcomingEvents.map((event) => (
-          <div class="col-12 lg:col-6 flex">
-            <div class="bg-white border-2 border-primary/10 p-6 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between w-full">
-              
-              <div>
-                <!-- Date & Modality Banner -->
-                <div class="mb-4 pb-3 border-b border-slate-100">
-                  <span class="block text-text font-bold text-lg leading-tight">
-                    {event.date}
-                  </span>
-                  <span class="block text-slate-500 text-sm font-medium mt-1">
-                    {event.time} &bull; Virtual Session
-                  </span>
-                </div>
-
-                <!-- Event Title -->
-                <h3 class="h6 text-xl font-primary mb-4 leading-snug text-text">
-                  {event.title}
-                </h3>
-
-                <!-- Featured Institutions -->
-                {event.featuredInstitutions && (
-                  <p class="text-sm font-semibold text-slate-700 mb-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-primary block mb-0.5">Featured Institutions</span>
-                    {event.featuredInstitutions}
-                  </p>
-                )}
-
-                <!-- Description -->
-                <p class="text-slate-600 text-lg mb-6 leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-
-              <!-- Registration Button -->
-              <div class="flex flex-col gap-4 mt-auto pt-2">
-                <a 
-                  href={event.registrationLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="w-full flex items-center justify-center font-bold px-6 py-3.5 bg-primary btn btn-primary no-underline uppercase hover:bg-secondary hover:border-secondary hover:text-text tracking-wide text-center"
-                >
-                  Register for Virtual Session
-                </a>
-              </div>
-
+      {activeEvents.length > 0 && (
+        <div
+          id="upcoming-events-grid"
+          class="row justify-self-center g-6 gy-4 mb-12"
+        >
+          {activeEvents.map((event) => (
+            <div
+              class="col-12 lg:col-6 flex"
+              data-event-item
+              data-event-date={event.isoDate}
+            >
+              <EventCard type="virtual" {...event} />
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
+      <!-- Empty State Fallback -->
+      <div
+        id="no-upcoming-events"
+        aria-live="polite"
+        class:list={[
+          "row justify-self-center prose prose-slate prose-xl text-center py-6 mb-12",
+          { hidden: activeEvents.length > 0 },
+        ]}
+      >
+        <p>
+          Check back in January for details on our Spring 2027 virtual events.
+        </p>
+      </div>
     </div>
   </section>
   <CTA />
